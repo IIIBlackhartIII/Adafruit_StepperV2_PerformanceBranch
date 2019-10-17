@@ -1,14 +1,5 @@
-# Adafruit Motor Shield v2 Library [![Build Status](https://travis-ci.org/adafruit/Adafruit_Motor_Shield_V2_Library.svg?branch=master)](https://travis-ci.org/adafruit/Adafruit_Motor_Shield_V2_Library)
+Fork of the Adafruit Stepper Motor Shield V2 Library, with the 'quickstep()' function implemented, as suggested by 'Adafruit Support Bill' over on their forum. (https://forums.adafruit.com/viewtopic.php?f=31&t=57041&p=292119#p292119) This function is similar to the 'onestep() function, but always functions in the DOUBLE motor mode, and removes the bloat of the microstepping PWM code. This yields a little bit of extra motor speed out of the Shield. Speeds are still pretty limited, but this gives you a little bit more. 
 
-<img src="https://cdn-shop.adafruit.com/1200x900/1438-00.jpg" height="300"/>
+If you are using the AccelStepper library, simply use 'quickstep(FORWARD)' and 'quickstep(BACKWARD)' in place of the 'onestep()' functions when setting up the motor calls. 
 
-This is the library for the Adafruit Motor Shield V2 for Arduino. It supports DC motors & Stepper motors with microstepping as well as stacking-support. It is *not* compatible with the V1 library!
-
-For use with the Motor Shield https://www.adafruit.com/products/1438
-and Motor FeatherWing https://www.adafruit.com/product/2927
-
-Adafruit invests time and resources providing this open source code, please support Adafruit and open-source hardware by purchasing products from Adafruit!
- 
-Written by Limor Fried/Ladyada for Adafruit Industries.
-BSD license, check license.txt for more information.
-All text above must be included in any redistribution.
+Also suggested to increase your I2C bus speed to communicate with the motors faster, you should be able to increase the bus up to 500Khz by adding the line " Wire.setClock(500000L);" to your code after you call 'begin();'
