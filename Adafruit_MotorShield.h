@@ -71,6 +71,7 @@ class Adafruit_StepperMotor {
 
   void step(uint16_t steps, uint8_t dir,  uint8_t style = SINGLE);
   uint8_t onestep(uint8_t dir, uint8_t style);
+  uint8_t quickstep(uint8_t dir);
   void release(void);
 
   friend class Adafruit_MotorShield;  ///< Let MotorShield create StepperMotors
